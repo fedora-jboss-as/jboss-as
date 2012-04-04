@@ -1,11 +1,10 @@
 #!/bin/sh
 #
-# JBoss standalone control script
+# JBoss AS control script
 #
 # chkconfig: - 80 20
 # description: JBoss AS Standalone
-# processname: standalone
-# pidfile: /var/run/jboss-as/jboss-as-standalone.pid
+# pidfile: /var/run/jboss-as/jboss-as.pid
 # config: /etc/jboss-as/jboss-as.conf
 
 # Source function library.
@@ -30,7 +29,7 @@ fi
 export JBOSS_HOME
 
 if [ -z "$JBOSS_PIDFILE" ]; then
-  JBOSS_PIDFILE=/var/run/jboss-as/jboss-as-standalone.pid
+  JBOSS_PIDFILE=/var/run/jboss-as/jboss-as.pid
 fi
 export JBOSS_PIDFILE
 
@@ -50,7 +49,9 @@ if [ -z "$JBOSS_CONFIG" ]; then
   JBOSS_CONFIG=standalone.xml
 fi
 
-JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh
+if [ -z "$JBOSS_SCRIPT" ]; then
+  JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh
+fi
 
 prog='jboss-as'
 

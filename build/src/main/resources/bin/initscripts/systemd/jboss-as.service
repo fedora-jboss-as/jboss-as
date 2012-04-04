@@ -1,0 +1,17 @@
+[Unit]
+Description=The JBoss Application Server
+After=syslog.target network.target
+Before=httpd.service
+
+[Service]
+Environment=LAUNCH_JBOSS_IN_BACKGROUND=1
+EnvironmentFile=-/etc/jboss-as/jboss-as.conf
+User=jboss-as
+LimitNOFILE=102642
+PIDFile=/var/run/jboss-as/jboss-as.pid
+ExecStart=/usr/share/jboss-as/bin/standalone.sh -c $JBOSS_CONFIG -b $JBOSS_BIND
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
+

@@ -147,6 +147,10 @@ fi
 if [ "x$JBOSS_CONFIG_DIR" = "x" ]; then
    JBOSS_CONFIG_DIR="$JBOSS_BASE_DIR/configuration"
 fi
+# determine the default pid file location dir, if not set
+if [ "x$JBOSS_PIDFILE" = "x" ]; then
+   JBOSS_PIDFILE="/var/run/jboss-as/jboss-as.pid"
+fi
 
 # For Cygwin, switch paths to Windows format before running java
 if $cygwin; then
