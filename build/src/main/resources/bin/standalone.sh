@@ -187,6 +187,7 @@ while true; do
          -jaxpmodule "javax.xml.jaxp-provider" \
          org.jboss.as.standalone \
          -Djboss.home.dir=\"$JBOSS_HOME\" \
+         -Djboss.server.base.dir=\"$JBOSS_BASE_DIR\" \
          "$@"
       JBOSS_STATUS=$?
    else
@@ -199,6 +200,7 @@ while true; do
          -jaxpmodule "javax.xml.jaxp-provider" \
          org.jboss.as.standalone \
          -Djboss.home.dir=\"$JBOSS_HOME\" \
+         -Djboss.server.base.dir=\"$JBOSS_BASE_DIR\" \
          "$@" "&"
       JBOSS_PID=$!
       # Trap common signals and relay them to the jboss process
