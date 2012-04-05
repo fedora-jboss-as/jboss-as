@@ -1,6 +1,12 @@
 #!/bin/sh
 
-DIRNAME=`dirname "$0"`
+# Set proper dirname if script is executed through symlink
+LINK=`readlink "$0"`
+if [ "x$LINK" = "x" ]; then
+    DIRNAME=`dirname "$0"`
+else
+    DIRNAME=`dirname "$LINK"`
+fi
 
 # OS specific support (must be 'true' or 'false').
 cygwin=false;
