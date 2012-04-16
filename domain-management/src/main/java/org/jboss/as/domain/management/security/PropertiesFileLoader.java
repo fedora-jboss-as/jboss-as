@@ -22,24 +22,27 @@
 
 package org.jboss.as.domain.management.security;
 
-import static org.jboss.as.domain.management.DomainManagementLogger.ROOT_LOGGER;
-import static org.jboss.as.domain.management.DomainManagementMessages.MESSAGES;
+import org.jboss.msc.service.StartContext;
+import org.jboss.msc.service.StartException;
+import org.jboss.msc.service.StopContext;
+import org.jboss.msc.value.InjectedValue;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
+import java.util.Arrays;
 import java.util.Properties;
 
-import org.jboss.msc.service.StartContext;
-import org.jboss.msc.service.StartException;
-import org.jboss.msc.service.StopContext;
-import org.jboss.msc.value.InjectedValue;
+import static org.jboss.as.domain.management.DomainManagementLogger.ROOT_LOGGER;
+import static org.jboss.as.domain.management.DomainManagementMessages.MESSAGES;
 
 /**
  * The base class for services depending on loading a properties file, loads the properties on
@@ -49,6 +52,7 @@ import org.jboss.msc.value.InjectedValue;
  */
 public abstract class PropertiesFileLoader {
 
+    public static final char[] ESCAPE_ARRAY = new char[]{'='};
     private final String path;
     private final InjectedValue<String> relativeTo = new InjectedValue<String>();
 
@@ -82,7 +86,7 @@ public abstract class PropertiesFileLoader {
         propertiesFile = null;
     }
 
-    protected Properties getProperties() throws IOException {
+    public Properties getProperties() throws IOException {
         /*
          * This method does attempt to minimise the effect of race conditions, however this is not overly critical as if you
          * have users attempting to authenticate at the exact point their details are added to the file there is also a chance
@@ -99,7 +103,7 @@ public abstract class PropertiesFileLoader {
                 if (loadReallyRequired) {
                     ROOT_LOGGER.debugf("Reloading properties file '%s'", propertiesFile.getAbsolutePath());
                     Properties props = new Properties();
-                    InputStream is = new FileInputStream(propertiesFile);
+                    InputStreamReader is = new InputStreamReader(new FileInputStream(propertiesFile), Charset.forName("UTF-8"));
                     try {
                         props.load(is);
                     } finally {
@@ -118,7 +122,7 @@ public abstract class PropertiesFileLoader {
         return properties;
     }
 
-    private synchronized void persistProperties() throws IOException {
+    public synchronized void persistProperties() throws IOException {
         Properties toSave = (Properties) properties.clone();
 
         File backup = new File(propertiesFile.getCanonicalPath() + ".bak");
@@ -135,8 +139,7 @@ public abstract class PropertiesFileLoader {
         FileReader fr = new FileReader(backup);
         BufferedReader br = new BufferedReader(fr);
 
-        FileWriter fw = new FileWriter(propertiesFile);
-        BufferedWriter bw = new BufferedWriter(fw);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(propertiesFile),"UTF8"));
 
         try {
             String line;
@@ -151,8 +154,9 @@ public abstract class PropertiesFileLoader {
                     int equals = trimmed.indexOf('=');
                     if (equals > 0) {
                         String userName = trimmed.substring(0, equals);
-                        if (toSave.contains(userName)) {
-                            bw.append(userName + "=" + toSave.getProperty(userName));
+                        if (toSave.containsKey(userName)) {
+                            String escapedUserName = escapeString(userName, ESCAPE_ARRAY);
+                            bw.append(escapedUserName + "=" + toSave.getProperty(userName));
                             bw.newLine();
                             toSave.remove(userName);
                         }
@@ -162,18 +166,38 @@ public abstract class PropertiesFileLoader {
 
             // Append any additional users to the end of the file.
             for (Object currentKey : toSave.keySet()) {
-                bw.append(currentKey + "=" + toSave.getProperty((String) currentKey));
+                String escapedUserName = escapeString((String) currentKey, ESCAPE_ARRAY);
+                bw.append(escapedUserName + "=" + toSave.getProperty((String) currentKey));
                 bw.newLine();
             }
-            bw.newLine();
         } finally {
             safeClose(bw);
-            safeClose(fw);
             safeClose(br);
             safeClose(fr);
         }
     }
 
+
+    public static String escapeString(String name, char[] escapeArray) {
+        Arrays.sort(escapeArray);
+        for(int i = 0; i < name.length(); ++i) {
+            char ch = name.charAt(i);
+            if(Arrays.binarySearch(escapeArray,ch) >=0 ) {
+                StringBuilder builder = new StringBuilder();
+                builder.append(name, 0, i);
+                builder.append('\\').append(ch);
+                for(int j = i + 1; j < name.length(); ++j) {
+                    ch = name.charAt(j);
+                    if(Arrays.binarySearch(escapeArray,ch)>0) {
+                        builder.append('\\');
+                    }
+                    builder.append(ch);
+                }
+                return builder.toString();
+            }
+        }
+        return name;
+    }
     private void safeClose(final Closeable c) {
         try {
             c.close();
