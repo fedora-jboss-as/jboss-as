@@ -391,11 +391,11 @@
                                             <exclude>jacorb:jacorb</exclude>
                                             <exclude>javassist:javassist</exclude>
                                             <exclude>javax.persistence:persistence-api</exclude>
-                                            <exclude>javax.servlet:servlet-api</exclude>
+                                            <!-- <exclude>javax.servlet:servlet-api</exclude> Pulled in by org.osgi:org.osgi.compendium, alias -->
                                             <exclude>javax.transaction:jta</exclude>
                                             <exclude>javax.xml:jaxrpc-api</exclude>
                                             <exclude>javax.xml.soap:saaj-api</exclude>
-                                            <exclude>javax.xml.stream:stax-api</exclude>
+                                            <!-- <exclude>javax.xml.stream:stax-api</exclude> this is pulled by resteasy deps -->
                                             <exclude>jboss:jboss-logging-spi</exclude>
                                             <exclude>jboss:jboss-serialization</exclude>
                                             <exclude>jboss.web:el-api</exclude>
@@ -442,11 +442,11 @@
                                             <exclude>org.slf4j:slf4j-log4j12</exclude>
                                             <exclude>org.slf4j:slf4j-log4j13</exclude>
                                             <exclude>oro:oro</exclude>
-                                            <exclude>stax:stax-api</exclude>
+                                            <!-- <exclude>stax:stax-api</exclude> alias in Fedora -->
                                             <exclude>sun-jaxb:jaxb-api</exclude>
                                             <exclude>trove:trove</exclude>
                                             <exclude>woodstox:wstx-lgpl</exclude>
-                                            <exclude>xml-apis:xml-apis</exclude>
+                                            <!-- <exclude>xml-apis:xml-apis</exclude> An alias in Fedora -->
                                         </excludes>
                                     </bannedDependencies>
                                 </rules>
