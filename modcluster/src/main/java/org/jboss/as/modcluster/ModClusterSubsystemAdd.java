@@ -46,7 +46,6 @@ import org.jboss.modcluster.config.impl.ModClusterConfig;
 import org.jboss.msc.service.ServiceBuilder;
 import org.jboss.msc.service.ServiceController;
 import org.jboss.msc.service.ServiceController.Mode;
-import org.omg.CosCollection.Command;
 
 /**
  * The managed subsystem add update.
