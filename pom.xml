@@ -217,7 +217,7 @@
         <version.org.jboss.stdio>1.0.1.GA</version.org.jboss.stdio>
         <version.org.jboss.threads>2.0.0.GA</version.org.jboss.threads>
         <version.org.jboss.web>7.0.13.Final</version.org.jboss.web>
-        <version.org.jboss.web.jasper-jdt>7.0.3.Final</version.org.jboss.web.jasper-jdt>
+        <version.org.jboss.web.jasper-jdt>3.3.0</version.org.jboss.web.jasper-jdt>
         <version.org.jboss.weld.weld>1.1.5.AS71.Final</version.org.jboss.weld.weld>
         <version.org.jboss.weld.weld-api>1.1.Final</version.org.jboss.weld.weld-api>
         <version.org.jboss.ws.api>1.0.0.GA</version.org.jboss.ws.api>
@@ -4972,8 +4972,8 @@
             </dependency>
 
             <dependency>
-                <groupId>org.jboss.web</groupId>
-                <artifactId>jasper-jdt</artifactId>
+                <groupId>org.eclipse.jdt</groupId>
+                <artifactId>core</artifactId>
                 <version>${version.org.jboss.web.jasper-jdt}</version>
             </dependency>
 

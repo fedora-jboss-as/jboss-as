@@ -144,8 +144,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.web</groupId>
-            <artifactId>jasper-jdt</artifactId>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>core</artifactId>
         </dependency>
 
         <dependency>
