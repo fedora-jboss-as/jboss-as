@@ -32,6 +32,7 @@ import org.jboss.as.controller.client.ModelControllerClient;
 
 import org.python.core.adapter.ClassicPyObjectAdapter;
 import org.python.core.PyObject;
+import org.python.core.PyObject.ConversionException;
 import org.python.core.PyString;
 import org.python.util.PythonInterpreter;
 
@@ -141,7 +142,11 @@ public class SoSReport {
      * @return the full path to the report archive
      */
     public String execute() {
-        return sosreport.invoke("execute").asString();
+        try {
+          return sosreport.invoke("execute").asString(0);
+        } catch (ConversionException e) {
+          return "";
+        }
     }
 
     /**
