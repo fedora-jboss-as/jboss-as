@@ -384,10 +384,6 @@
             <maven-resource group="org.jboss.spec.javax.jms" artifact="jboss-jms-api_1.1_spec"/>
         </module-def>
 
-        <module-def name="javax.jws.api">
-            <maven-resource group="javax.jws" artifact="jsr181-api"/>
-        </module-def>
-
         <module-def name="javax.management.j2ee.api">
             <maven-resource group="org.jboss.spec.javax.management.j2ee" artifact="jboss-j2eemgmt-api_1.1_spec"/>
         </module-def>

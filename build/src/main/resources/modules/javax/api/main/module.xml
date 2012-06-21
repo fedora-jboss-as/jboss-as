@@ -38,6 +38,7 @@
                 <path name="javax/imageio/plugins/jpeg"/>
                 <path name="javax/imageio/spi"/>
                 <path name="javax/imageio/stream"/>
+                <path name="javax/jws"/>
                 <path name="javax/lang/model"/>
                 <path name="javax/lang/model/element"/>
                 <path name="javax/lang/model/type"/>

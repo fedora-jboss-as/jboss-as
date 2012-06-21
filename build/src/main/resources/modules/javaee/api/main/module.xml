@@ -36,7 +36,6 @@
         <module name="javax.inject.api" export="true"/>
         <module name="javax.interceptor.api" export="true"/>
         <module name="javax.jms.api" export="true"/>
-        <module name="javax.jws.api" export="true"/>
         <module name="javax.mail.api" export="true"/>
         <module name="javax.management.j2ee.api" export="true"/>
         <module name="javax.persistence.api" export="true"/>
