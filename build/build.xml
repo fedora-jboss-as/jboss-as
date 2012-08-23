@@ -478,6 +478,10 @@
             <maven-resource group="net.sourceforge.nekohtml" artifact="nekohtml"/>
         </module-def>
 
+        <module-def name="net.sourceforge.serp">
+            <maven-resource group="net.sourceforge.serp" artifact="serp"/>
+        </module-def>
+
         <module-def name="org.apache.commons.beanutils">
             <maven-resource group="commons-beanutils" artifact="commons-beanutils"/>
         </module-def>
@@ -578,6 +582,14 @@
 
         <module-def name="org.apache.juddi.scout">
             <maven-resource group="org.apache.juddi.scout" artifact="scout"/>
+        </module-def>
+
+        <module-def name="org.apache.openjpa">
+            <maven-resource group="org.apache.openjpa" artifact="openjpa-jdbc"/>
+            <maven-resource group="org.apache.openjpa" artifact="openjpa-kernel"/>
+            <maven-resource group="org.apache.openjpa" artifact="openjpa-lib"/>
+            <maven-resource group="org.apache.openjpa" artifact="openjpa-persistence"/>
+            <maven-resource group="org.apache.openjpa" artifact="openjpa-persistence-jdbc"/>
         </module-def>
 
         <module-def name="org.apache.xalan">
