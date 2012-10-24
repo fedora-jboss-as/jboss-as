@@ -1600,6 +1600,11 @@
                 </dependency>
 
                 <dependency>
+                    <groupId>org.osgi</groupId>
+                    <artifactId>org.osgi.compendium</artifactId>
+                </dependency>
+
+                <dependency>
                     <groupId>org.picketlink</groupId>
                     <artifactId>picketlink-fed</artifactId>
                 </dependency>
