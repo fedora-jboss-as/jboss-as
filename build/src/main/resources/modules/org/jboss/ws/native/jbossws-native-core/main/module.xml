@@ -56,7 +56,6 @@
         <module name="org.jboss.ws.api" />
         <module name="org.jboss.ws.spi" />
         <module name="org.jboss.ws.common" />
-        <module name="org.jboss.ws.native.jbossws-native-factories" services="import"/>
         <module name="org.jboss.ws.native.jbossws-native-services" services="import"/>
         <module name="org.jboss.common-core" />
         <module name="org.jboss.logging" />

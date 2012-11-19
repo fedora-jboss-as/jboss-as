@@ -33,6 +33,12 @@
 
     <dependencies>
         <module name="asm.asm" />
+        <module name="org.apache.cxf.impl" services="import">
+            <imports>
+                <include path="META-INF/cxf"/> <!-- required to also pull in the bus extensions from META-INF -->
+                <include path="META-INF/"/>
+            </imports>
+        </module>
         <module name="javax.api" />
         <module name="javax.annotation.api" />
         <module name="javax.jms.api" />
@@ -40,6 +46,7 @@
         <module name="javax.mail.api" />
         <module name="javax.resource.api" />
         <module name="javax.servlet.api" />
+        <module name="javax.wsdl4j.api" />
         <module name="javax.xml.bind.api" services="import"/>
         <module name="com.sun.xml.bind" services="import"/>
         <module name="javax.wsdl4j.api" />
