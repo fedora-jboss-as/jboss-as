@@ -698,7 +698,9 @@
         </module-def>
 
         <module-def name="org.apache.james.mime4j">
-            <maven-resource group="org.apache.james" artifact="apache-mime4j"/>
+            <maven-resource group="org.apache.james" artifact="apache-mime4j-core"/>
+            <maven-resource group="org.apache.james" artifact="apache-mime4j-dom"/>
+            <maven-resource group="org.apache.james" artifact="apache-mime4j-storage"/>
         </module-def>
 
         <module-def name="org.apache.lucene">
