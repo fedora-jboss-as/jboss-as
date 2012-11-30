@@ -307,10 +307,12 @@
                     <artifactId>jsf-api</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>javax.faces</groupId>
                     <artifactId>jsf-impl</artifactId>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>javax.inject</groupId>
@@ -527,10 +529,12 @@
                     <artifactId>org.apache.felix.configadmin</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>org.apache.felix.log</artifactId>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.apache.httpcomponents</groupId>
@@ -828,11 +832,13 @@
                     <artifactId>jboss-as-configadmin</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.jboss.as</groupId>
                     <artifactId>jboss-as-console</artifactId>
                     <classifier>resources</classifier>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.jboss.as</groupId>
@@ -1223,6 +1229,7 @@
                     <artifactId>jbosgi-framework-core</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.jboss.osgi.http</groupId>
                     <artifactId>jbosgi-http-api</artifactId>
@@ -1232,6 +1239,7 @@
                     <groupId>org.jboss.osgi.logging</groupId>
                     <artifactId>jboss-osgi-logging</artifactId>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.jboss.osgi.repository</groupId>
@@ -1318,10 +1326,12 @@
                     <artifactId>jboss-sasl</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.jboss.seam.integration</groupId>
                     <artifactId>jboss-seam-int-jbossas</artifactId>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.jboss.security</groupId>
@@ -1614,6 +1624,7 @@
                     <artifactId>org.osgi.compendium</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.picketlink</groupId>
                     <artifactId>picketlink-fed</artifactId>
@@ -1633,6 +1644,7 @@
                     <groupId>org.projectodd.stilts</groupId>
                     <artifactId>stilts-stomplet-server-bundle</artifactId>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.scannotation</groupId>

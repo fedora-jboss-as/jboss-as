@@ -86,7 +86,9 @@
 
     <target name="create-ext-content">
         <mkdir dir="${output.dir}/modules/org/jboss/integration/ext-content/main/bundled"/>
+        <!--
         <copy file="${org.jboss.seam.integration:jboss-seam-int-jbossas:jar}" tofile="${output.dir}/modules/org/jboss/integration/ext-content/main/bundled/jboss-seam-int.jar"/>
+        -->
 
         <!-- Copy the EJB specific schemas to the JBOSS_HOME/docs/schema folder -->
         <unzip src="${org.jboss.metadata:jboss-metadata-ejb:jar}" dest="${output.dir}/docs/schema/">
@@ -321,9 +323,11 @@
             <maven-resource group="com.sun.faces" artifact="jsf-impl"/>
         </module-def>
 
+        <!--
         <module-def name="com.sun.jsf-impl" slot="1.2">
             <maven-resource group="javax.faces" artifact="jsf-impl"/>
         </module-def>
+        -->
 
         <module-def name="com.sun.xml.bind">
             <maven-resource group="com.sun.xml.bind" artifact="jaxb-impl"/>
@@ -707,9 +711,11 @@
             <maven-resource group="org.jboss.as" artifact="jboss-as-appclient"/>
         </module-def>
 
+        <!--
         <module-def name="org.jboss.as.console">
             <maven-resource-with-classifier group="org.jboss.as" artifact="jboss-as-console" classifier="resources"/>
         </module-def>
+        -->
 
         <module-def name="org.jboss.as.cli">
             <maven-resource group="org.jboss.as" artifact="jboss-as-cli"/>
@@ -1171,11 +1177,13 @@
             <maven-resource group="org.osgi" artifact="org.osgi.core"/>
         </module-def>
 
+        <!--
         <module-def name="org.picketlink">
             <maven-resource group="org.picketlink" artifact="picketlink-fed" jandex="true"/>
             <maven-resource group="org.picketlink" artifact="picketlink-bindings" jandex="true"/>
             <maven-resource group="org.picketlink" artifact="picketlink-bindings-jboss"/>
         </module-def>
+        -->
 
         <module-def name="org.picketbox">
             <maven-resource group="org.picketbox" artifact="picketbox"/>
@@ -1233,14 +1241,17 @@
             <maven-bundle group="org.apache.felix" artifact="org.apache.felix.configadmin"/>
         </bundle-def>
 
+        <!--
         <bundle-def name="org.apache.felix.log">
             <maven-bundle group="org.apache.felix" artifact="org.apache.felix.log"/>
         </bundle-def>
+        -->
 
         <bundle-def name="org.jboss.as.osgi.configadmin">
             <maven-bundle group="org.jboss.as" artifact="jboss-as-osgi-configadmin"/>
         </bundle-def>
 
+        <!--
         <bundle-def name="javax.servlet.api" slot="v25">
             <maven-bundle group="org.jboss.osgi.http" artifact="jbosgi-http-api"/>
         </bundle-def>
@@ -1256,6 +1267,7 @@
         <bundle-def name="org.projectodd.stilts">
             <maven-bundle group="org.projectodd.stilts" artifact="stilts-stomplet-server-bundle"/>
         </bundle-def>
+        -->
     </target>
 
     <target name="clean-target">
