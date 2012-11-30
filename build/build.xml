@@ -100,9 +100,10 @@
 
     <target name="create-ext-content">
         <mkdir dir="${output.dir}/modules/system/layers/base/org/jboss/integration/ext-content/main/bundled"/>
+        <!--
         <copy file="${org.jboss.seam.integration:jboss-seam-int-jbossas:jar}" tofile="${output.dir}/modules/system/layers/base/org/jboss/integration/ext-content/main/bundled/jboss-seam-int.jar"/>
-        <!-- resteasy spring integration -->
         <copy file="${org.jboss.resteasy:resteasy-spring:jar}" tofile="${output.dir}/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/bundled/resteasy-spring.jar"/>
+        -->
 
         <!-- Copy the EJB specific schemas to the JBOSS_HOME/docs/schema folder -->
         <unzip src="${org.jboss.metadata:jboss-metadata-ejb:jar}" dest="${output.dir}/docs/schema/">
@@ -940,9 +941,11 @@
             <maven-resource group="org.wildfly" artifact="wildfly-appclient"/>
         </module-def>
 
+        <!--
         <module-def name="org.jboss.as.console">
             <maven-resource-with-classifier group="org.jboss.hal" artifact="release-stream" classifier="resources"/>
         </module-def>
+        -->
 
         <module-def name="org.jboss.as.cli">
             <maven-resource group="org.wildfly" artifact="wildfly-cli"/>
@@ -1439,6 +1442,7 @@
             <maven-resource group="org.osgi" artifact="org.osgi.core"/>
         </module-def>
 
+        <!--
         <module-def name="org.picketlink">
         </module-def>
 
@@ -1473,6 +1477,7 @@
         <module-def name="org.picketlink.idm">
             <maven-resource group="org.picketlink" artifact="picketlink-idm-impl"/>
         </module-def>
+       -->
 
         <module-def name="org.picketbox">
             <maven-resource group="org.picketbox" artifact="picketbox"/>
