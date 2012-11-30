@@ -1023,11 +1023,13 @@
                     <artifactId>wildfly-cmp</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.jboss.hal</groupId>
                     <artifactId>release-stream</artifactId>                    
                     <classifier>resources</classifier>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.wildfly</groupId>
@@ -1624,10 +1626,12 @@
                     <artifactId>jboss-sasl</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.jboss.seam.integration</groupId>
                     <artifactId>jboss-seam-int-jbossas</artifactId>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.jboss.security</groupId>
@@ -1935,6 +1939,7 @@
                     <artifactId>org.osgi.core</artifactId>
                 </dependency>
 
+                <!--
                 <dependency>
                     <groupId>org.picketlink</groupId>
                     <artifactId>picketlink-api</artifactId>
@@ -1974,6 +1979,7 @@
                     <groupId>org.picketlink.distribution</groupId>
                     <artifactId>picketlink-jbas7</artifactId>
                 </dependency>
+                -->
 
                 <dependency>
                     <groupId>org.scannotation</groupId>
