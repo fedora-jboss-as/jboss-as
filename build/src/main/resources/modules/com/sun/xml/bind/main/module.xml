@@ -28,6 +28,9 @@
     </properties>
 
     <resources>
+        <!-- Unbundled from jaxb in Fedora -->
+        <resource-root path="istack-commons-runtime.jar"/>
+        <resource-root path="txw2.jar"/>
         <!-- Insert resources here -->
     </resources>
 
