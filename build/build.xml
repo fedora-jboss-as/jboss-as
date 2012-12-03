@@ -896,7 +896,7 @@
             <maven-resource group="org.jboss.as" artifact="jboss-as-web"/>
             <maven-resource group="org.eclipse.jdt" artifact="core"/>
             <maven-resource group="org.jboss.web" artifact="jbossweb"/>
-            <extract-native-jar group="org.jboss.as" artifact="jbossweb-native"/>
+            <!-- <extract-native-jar group="org.jboss.as" artifact="jbossweb-native"/>  symlinked in Fedora -->
         </module-def>
 
         <module-def name="org.jboss.as.webservices">
