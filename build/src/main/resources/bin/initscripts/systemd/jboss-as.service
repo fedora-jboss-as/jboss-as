@@ -9,7 +9,7 @@ EnvironmentFile=-/etc/jboss-as/jboss-as.conf
 User=jboss-as
 LimitNOFILE=102642
 PIDFile=/var/run/jboss-as/jboss-as.pid
-ExecStart=/usr/share/jboss-as/bin/standalone.sh -c $JBOSS_CONFIG -b $JBOSS_BIND
+ExecStart=/usr/share/jboss-as/bin/launch.sh $JBOSS_MODE $JBOSS_CONFIG $JBOSS_BIND
 StandardOutput=null
 
 [Install]
