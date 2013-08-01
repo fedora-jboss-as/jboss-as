@@ -1485,7 +1485,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.github.relaxng</groupId>
+                <groupId>relaxngDatatype</groupId>
                 <artifactId>relaxngDatatype</artifactId>
                 <version>${version.com.github.relaxng}</version>
             </dependency>
