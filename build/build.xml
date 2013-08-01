@@ -419,7 +419,7 @@
         </module-def>
 
         <module-def name="com.github.relaxng">
-            <maven-resource group="com.github.relaxng" artifact="relaxngDatatype" />
+            <maven-resource group="relaxngDatatype" artifact="relaxngDatatype" />
         </module-def>
 
         <module-def name="com.google.guava">
