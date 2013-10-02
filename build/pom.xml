@@ -357,11 +357,6 @@
                 </dependency>
 
                 <dependency>
-                    <groupId>javax.jws</groupId>
-                    <artifactId>jsr181-api</artifactId>
-                </dependency>
-
-                <dependency>
                     <groupId>com.sun.mail</groupId>
                     <artifactId>javax.mail</artifactId>
                 </dependency>
