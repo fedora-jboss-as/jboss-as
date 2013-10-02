@@ -3575,7 +3575,7 @@
 
             <!-- EL3 RI implementation -->
             <dependency>
-                <groupId>org.glassfish</groupId>
+                <groupId>org.glassfish.web</groupId>
                 <artifactId>javax.el</artifactId>
                 <version>${version.org.glassfish.javax.el}</version>
             </dependency>
@@ -3592,6 +3592,13 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
+            <dependency>
+                 <groupId>org.jboss.spec.javax.el</groupId>
+                 <artifactId>jboss-el-api_3.0_spec</artifactId>
+                <version>1.0.0.Final</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.hibernate</groupId>

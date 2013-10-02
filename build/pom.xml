@@ -715,7 +715,7 @@
                 </dependency>
 
                 <dependency>
-                    <groupId>org.glassfish</groupId>
+                    <groupId>org.glassfish.web</groupId>
                     <artifactId>javax.el</artifactId>
                 </dependency>
 
@@ -723,6 +723,11 @@
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.enterprise.concurrent</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.jboss.spec.javax.el</groupId>
+                    <artifactId>jboss-el-api_3.0_spec</artifactId>
                 </dependency>
 
                 <dependency>
