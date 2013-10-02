@@ -335,6 +335,7 @@
         </module-def>
 
         <module-def name="org.jboss.log4j.logmanager">
+            <maven-resource group="log4j" artifact="log4j"/>
             <maven-resource group="org.jboss.logmanager" artifact="log4j-jboss-logmanager"/>
         </module-def>
 
