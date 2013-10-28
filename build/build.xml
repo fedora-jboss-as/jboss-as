@@ -862,7 +862,9 @@
                  and contains native libraries that are extracted
             -->
             <maven-resource group="org.hornetq" artifact="hornetq-native"/>
+            <!-- Do not extract the jar files in Fedora, we'll symlink them
             <extract-native-jar group="org.hornetq" artifact="hornetq-native"/>
+            -->
         </module-def>
 
         <module-def name="org.hornetq.protocol.amqp">
