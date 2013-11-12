@@ -827,11 +827,6 @@
             <maven-resource group="org.jipijapa" artifact="jipijapa-hibernate3"/>
         </module-def>
 
-        <!-- create empty slot for Hibernate 4.1.x or 4.2.x jars -->
-        <module-def name="org.hibernate" slot="4.1">
-            <maven-resource group="org.jipijapa" artifact="jipijapa-hibernate4-1"/>
-        </module-def>
-
         <!-- create empty slot for OpenJPA jars -->
         <module-def name="org.apache.openjpa">
             <maven-resource group="org.jipijapa" artifact="jipijapa-openjpa"/>
